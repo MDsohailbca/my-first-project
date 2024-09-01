@@ -1,161 +1,267 @@
-/* styles.css */
-
-body {
-    font-family: 'Arial', sans-serif;
+/* General Styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
+body {
+    background-color: #f9f9f9;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container */
 .container {
-    max-width: 1200px;
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
 }
 
+/* Header */
+header {
+    background-color: #28a745;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Main Section */
+main {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Product Header */
 .product-header {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 20px;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
 .product-header img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+    width: 300px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.product-details {
-    flex: 1;
-    padding-left: 20px;
+    animation: bounceIn 1s ease-out;
 }
 
 .product-details h1 {
     font-size: 28px;
-    margin: 0;
-    color: #333;
+    margin-bottom: 15px;
 }
 
-.price {
+.product-details .price {
     font-size: 24px;
-    color: #e74c3c;
-    margin: 10px 0;
+    color: #28a745;
+    margin-bottom: 15px;
 }
 
 .product-details p {
-    font-size: 16px;
-    margin: 5px 0;
-}
-
-button {
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #2980b9;
-}
-
-.description, .nutrition-facts, .reviews {
-    margin-top: 20px;
-}
-
-.description h2, .nutrition-facts h2, .reviews h2 {
-    font-size: 22px;
-    color: #333;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    margin: 0 0 15px 0;
-}
-
-.description p, .nutrition-facts p, .reviews p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.nutrition-facts ul, .reviews ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nutrition-facts li, .reviews li {
-    background-color: #f9f9f9;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.reviews li {
-    font-size: 16px;
-}
-
-.review-form {
-    margin-top: 30px;
-}
-
-.review-form h3 {
-    font-size: 20px;
     margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.product-details button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-details button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Description Section */
+.description {
+    margin-bottom: 30px;
+}
+
+.description h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
     color: #333;
+}
+
+.description p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Nutrition Facts */
+.nutrition-facts {
+    margin-bottom: 30px;
+}
+
+.nutrition-facts h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.nutrition-facts ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nutrition-facts ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Reviews Section */
+.reviews {
+    margin-bottom: 30px;
+}
+
+.reviews h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.reviews ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.reviews ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.reviews ul li em {
+    font-size: 16px;
+    color: #ffd700;
+}
+
+/* Review Form */
+.review-form h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.review-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .review-form input, .review-form textarea {
-    width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
     border-radius: 5px;
-    margin: 5px 0;
-    box-sizing: border-box;
-}
-
-.review-form textarea {
-    resize: vertical;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    resize: none;
 }
 
 .review-form button {
-    background-color: #2ecc71;
-    color: #fff;
+    background-color: #28a745;
+    color: white;
     border: none;
-    border-radius: 5px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 18px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .review-form button:hover {
-    background-color: #27ae60;
+    background-color: #218838;
+    transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-    .product-header {
-        flex-direction: column;
-        align-items: center;
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+    70% {
+        opacity: 0.7;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
     }
 
-    .product-details {
-        padding-left: 0;
-        text-align: center;
+    .product-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .product-header img {
-        max-width: 80%;
+        width: 100%;
     }
 }
