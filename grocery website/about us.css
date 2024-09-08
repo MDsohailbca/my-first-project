@@ -1,119 +1,95 @@
-/* Global Styles */
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
+    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
-    background: #28a745; /* Updated to a fresh green tone */
-    color: #fff;
-    padding: 20px 0;
+    background-color: #4caf50;
+    color: rgb(241, 23, 23);
+    padding: 15px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 36px;
-    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f1f1f1;
 }
 
 .container {
     width: 80%;
-    margin: auto;
-    overflow: hidden;
-    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-/* About Section Styles */
-.about-section {
-    background: #fff;
-    padding: 30px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+main {
+    padding: 20px 0;
 }
 
-.about-section:hover {
-    transform: translateY(-5px);
+.about-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #4caf50;
 }
 
-.about-section h2 {
-    color: #28a745;
-    font-size: 28px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #f4f4f4;
-    padding-bottom: 10px;
-    font-weight: bold;
-}
-
-.about-section p {
-    margin: 0 0 15px 0;
-    line-height: 1.8;
-    color: #666;
-    font-size: 18px;
-}
-
-.about-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.about-section ul li {
-    background: url('https://img.icons8.com/ios-filled/50/28a745/checkmark--v1.png') no-repeat left center;
-    background-size: 20px;
-    padding-left: 30px;
-    font-size: 18px;
+.about-us h3 {
+    font-size: 1.8em;
+    margin-top: 20px;
     margin-bottom: 10px;
-    color: #555;
+    color: #333;
 }
 
-.about-section ul li strong {
-    color: #28a745;
+.about-us p {
+    font-size: 1.1em;
+    line-height: 1.8em;
+    margin-bottom: 20px;
 }
 
-/* Footer Styles */
+.about-us ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.about-us ul li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
 footer {
-    background: #333;
-    color: #fff;
+    background-color: #4caf50;
+    color: rgb(2, 2, 1);
     text-align: center;
-    padding: 15px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    margin-top: 30px;
 }
 
 footer p {
     margin: 0;
-    font-size: 16px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-    }
-
-    header h1 {
-        font-size: 28px;
-    }
-
-    .about-section h2 {
-        font-size: 24px;
-    }
-
-    .about-section p, .about-section ul li {
-        font-size: 16px;
-    }
-
-    footer p {
-        font-size: 14px;
-    }
 }

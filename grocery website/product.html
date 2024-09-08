@@ -9,12 +9,12 @@
 <body>
     <header>
         <div class="container">
-            <h1>Grocery Store</h1>
+            <h1>STORE PRODUCT</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="product.html">Products</a></li>
-                    <li><a href="cart.html">cart</a></li>
+                    <li><a href="cart.html">Cart</a></li>
                 </ul>
             </nav>
         </div>
@@ -22,89 +22,34 @@
     <main>
         <div class="container">
             <div class="product-header">
-                <img src="images/cart-img-1.png" alt="Organic">
+                <img src="images/cart-img-1.png" alt="Organic Watermelon">
                 <div class="product-details">
-                    <h1>Organic </h1>
+                    <h1>Organic Watermelon</h1>
                     <p class="price">79/- each</p>
                     <p><strong>Brand:</strong> GreenFarm</p>
                     <p><strong>Category:</strong> Produce</p>
                     <p><strong>In Stock:</strong> 120 units</p>
-                    <button>Add to Cart</button>
-                </div>
-            </div>
-            <div class="description">
-                <h2>Description</h2>
-                <p>Our organic watermelon are rich in sweetness with a good taste and healthy, perfect for juices, snacks, or as a delicious guacamole base. Grown without pesticides, these watermelon are a healthy and fresh and natural choice for your kitchen.</p>
-            </div>
-            <div class="nutrition-facts">
-                <h2>Nutrition Facts</h2>
-                <ul>
-                    <li><strong>Calories:</strong> 160</li>
-                    <li><strong>Fat:</strong> 15g</li>
-                    <li><strong>Carbohydrates:</strong> 9g</li>
-                    <li><strong>Protein:</strong>6g</li>
-                    <li><strong>Fiber:</strong> 7.5g</li>
-                </ul>
-            </div>
-            <div class="reviews">
-                <h2>Customer Reviews</h2>
-                <ul>
-                    <li><strong>John :</strong> Excellent quality, very fresh! <em>⭐⭐⭐⭐⭐</em></li>
-                    <li><strong>Smith:</strong> Good taste but a bit expensive. <em>⭐⭐⭐</em></li>
-                </ul>
-                <div class="review-form">
-                    <h3>Write a Review</h3>
-                    <form action="/submit-review" method="post">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <textarea name="review" rows="4" placeholder="Your Review" required></textarea>
-                        <button type="submit">Submit Review</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="product-header">
-                <img src="images/product-15.jpg" alt="Organic">
-                <div class="product-details">
-                    <h1>Organic </h1>
-                    <p class="price">140/- per kg</p>
-                    <p><strong>Brand:</strong> eeja farms</p>
-                    <p><strong>Category:</strong> Produce</p>
-                    <p><strong>In Stock:</strong> 70</p>
-                    <button>Add to Cart</button>
-                </div>
-            </div>
-            <div class="description">
-                <h2>Description</h2>
-                <p>Our organic and fresh mangoes with natural sweetness and to maintain a good diet.</p>
-            </div>
-            <div class="nutrition-facts">
-                <h2>Nutrition Facts</h2>
-                <ul>
-                    <li><strong>Calories:</strong> 230</li>
-                    <li><strong>Fat:</strong> 15g</li>
-                    <li><strong>Carbohydrates:</strong> 19g</li>
-                    <li><strong>Protein:</strong>5g</li>
-                    <li><strong>Fiber:</strong> 18.5g</li>
-                </ul>
-            </div>
-            <div class="reviews">
-                <h2>Customer Reviews</h2>
-                <ul>
-                    <li><strong>smith :</strong> Excellent quality, very fresh! <em>⭐⭐⭐⭐⭐</em></li>
-                    <li><strong>bravo:</strong> Good taste and sweet. <em>⭐⭐⭐</em></li>
-                </ul>
-                <div class="review-form">
-                    <h3>Write a Review</h3>
-                    <form action="/submit-review" method="post">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <textarea name="review" rows="4" placeholder="Your Review" required></textarea>
-                        <button type="submit">Submit Review</button>
-                    </form>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <div class="cart-message">Product added to cart!</div>
                 </div>
             </div>
         </div>
 
+        <!-- Additional Product Section -->
+        <div class="container">
+            <div class="product-header">
+                <img src="images/product-15.jpg" alt="Organic Mango">
+                <div class="product-details">
+                    <h1>Organic Mango</h1>
+                    <p class="price">140/- per kg</p>
+                    <p><strong>Brand:</strong> Eeja Farms</p>
+                    <p><strong>Category:</strong> Produce</p>
+                    <p><strong>In Stock:</strong> 70 units</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <div class="cart-message">Product added to cart!</div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="container">

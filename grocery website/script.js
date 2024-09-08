@@ -1,92 +1,23 @@
-let searchForm= document.querySelector('.search-form');
+const products = [
+    { id: 1, name: 'Organic Watermelon', price: 79, image: 'images/cart-img-1.png', quantity: 1 },
+    { id: 2, name: 'Organic Mango', price: 140, image: 'images/product-15.jpg', quantity: 1 }
+];
 
-document.querySelector('#search-btn').onclick = () =>
-{
-    searchForm.classList.toggle('active');
-}
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
 
-let loginForm= document.querySelector('.login-form');
+addToCartButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const product = products[index];
+        const existingProductIndex = cart.findIndex(item => item.id === product.id);
 
-document.querySelector('#login-btn').onclick = () =>
-{
-    loginForm.classList.toggle('active');
-}
+        if (existingProductIndex >= 0) {
+            cart[existingProductIndex].quantity += 1;
+        } else {
+            cart.push(product);
+        }
 
-// Array to hold cart items
-let cart = [];
-
-// Function to handle Add to Cart
-function addToCart(productName, productPrice) {
-    // Create a product object
-    const product = {
-        name: productName,
-        price: productPrice,
-        quantity: 1
-    };
-
-    // Check if product already exists in the cart
-    const existingProduct = cart.find(item => item.name === productName);
-
-    if (existingProduct) {
-        // If the product already exists, increase the quantity
-        existingProduct.quantity++;
-    } else {
-        // If not, add the new product to the cart
-        cart.push(product);
-    }
-
-    // Save the cart to local storage
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Redirect to the cart page
-    window.location.href = 'cart.html';
-}
-
-// Event listener for the Add to Cart button
-document.querySelector('button').addEventListener('click', function() {
-    addToCart('Organic Watermelon', 1.99);
-});
-
-
-// Load the cart from local storage
-let carts = JSON.parse(localStorage.getItem('cart')) || [];
-
-// Function to display the cart contents
-function displayCart() {
-    const cartContainer = document.getElementById('cart-container');
-    cartContainer.innerHTML = '';
-
-    if (cart.length === 0) {
-        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-        return;
-    }
-
-    cart.forEach((item, index) => {
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-            <p>${item.name} - $${item.price} x ${item.quantity}</p>
-            <button onclick="removeFromCart(${index})">Remove</button>
-        `;
-        cartContainer.appendChild(cartItem);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${product.name} has been added to your cart!`);
     });
-
-    // Display total price
-    const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-    const totalDisplay = document.createElement('p');
-    totalDisplay.className = 'cart-total';
-    totalDisplay.innerHTML = `Total: $${totalPrice.toFixed(2)}`;
-    cartContainer.appendChild(totalDisplay);
-}
-
-// Function to remove an item from the cart
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    displayCart();
-}
-
-// Display the cart when the page loads
-window.onload = displayCart;
-
-
+});

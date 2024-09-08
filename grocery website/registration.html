@@ -21,6 +21,10 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             padding: 20px;
             width: 300px;
+            transition: transform 0.3s ease;
+        }
+        .main:hover {
+            transform: scale(1.05);
         }
         .main h2 {
             color: #4caf50;
@@ -42,6 +46,15 @@
             box-sizing: border-box;
             border: 1px solid #ddd;
             border-radius: 5px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            border-color: #4caf50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+            outline: none;
         }
         button[type="submit"] {
             padding: 15px;
@@ -52,13 +65,22 @@
             cursor: pointer;
             width: 100%;
             font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        button[type="submit"]:active {
+            background-color: #388e3c;
+            transform: scale(0.95);
         }
     </style>
 </head>
 <body>
     <div class="main">
         <h2>Registration Form</h2>
-        <form action="your_server_endpoint_here" method="POST">
+        <form id="registrationForm">
             <label for="first">First Name:</label>
             <input type="text" id="first" name="first" required>
 
@@ -89,5 +111,42 @@
             <button type="submit">Register</button>
         </form>
     </div>
+
+    <!-- ScriptJS library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scriptjs/2.5.9/script.min.js"></script>
+    <script>
+        // Adding Shake Animation using script.js
+        $script.ready(function() {
+            // Shake animation on form submission
+            document.getElementById('registrationForm').addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent form submission for demo purposes
+
+                // Add shake animation to the form
+                var form = document.querySelector('.main');
+                form.classList.add('shake');
+
+                // Remove shake animation after it completes (0.3s)
+                setTimeout(function() {
+                    form.classList.remove('shake');
+                    alert('Form submitted successfully!'); // This line is just for demonstration
+                }, 300);
+            });
+
+            // Adding shake animation keyframes
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    25% { transform: translateX(-5px); }
+                    50% { transform: translateX(5px); }
+                    75% { transform: translateX(-5px); }
+                }
+                .shake {
+                    animation: shake 0.3s;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
 </body>
 </html>
